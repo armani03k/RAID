@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour {
         //animation proc
         anim.SetBool("Grounded", grounded);
         anim.SetBool("IsMoving", isMoving);
+        anim.SetFloat("Velocity", rb.velocity.y);
     }
 
     void LateUpdate() {

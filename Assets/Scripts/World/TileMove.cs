@@ -10,10 +10,9 @@ public class TileMove : MonoBehaviour {
     private Vector3 targetPos = Vector3.zero;
     private Vector3 originPos = Vector3.zero;
 
-    private bool cycle;
+    public Vector2 Dir;
 
-    public GameObject PlayerRef;
-    private bool isPlayerColliding = false;
+    private bool cycle;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +21,7 @@ public class TileMove : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        transform.position += (Vector3.right * transform.localScale.x) * Spd * Time.deltaTime;
+        transform.position += (new Vector3(Dir.x, Dir.y, 0) * transform.localScale.x) * Spd * Time.deltaTime;
 
         if (Vector3.Distance(transform.position, AreaB.position) <= 0.1f) {
             if (!cycle) AreaB.position = originPos;
@@ -39,9 +38,9 @@ public class TileMove : MonoBehaviour {
         transform.localScale = scale;
     }
 
-    private void OnCollisionStay2D(Collision2D collision) {
+    private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            collision.gameObject.transform.position += (Vector3.right * transform.localScale.x) * Spd * Time.fixedDeltaTime; //add platform force
+            collision.gameObject.transform.position += (new Vector3(Dir.x, 0, 0) * transform.localScale.x) * Spd * Time.fixedDeltaTime; //add platform force
         }
     }
 }
