@@ -29,6 +29,13 @@ public class PlayerStats : MonoBehaviour {
         }
     }
 
+    [Space(25)]
+    public float BarFillSpd;
+
+    //barfill
+    private Color fullCol;
+    private Color lowCol;
+
     [Header("UI")]
     public Image HPImg;
     public Image StmImg;
@@ -41,6 +48,9 @@ public class PlayerStats : MonoBehaviour {
         trueHP = BaseHP;
         trueStamina = BaseStamina;
 
+        fullCol = Color.white;
+        lowCol = Color.red;
+
         UIUpdate();
 	}
 
@@ -52,8 +62,11 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public void UIUpdate() {
-        HPImg.fillAmount = AveHP;
-        StmImg.fillAmount = AveStm;
+        HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount,AveHP, BarFillSpd);
+        StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd);
+
+        //change color
+        StmImg.color = Color.Lerp(lowCol, fullCol, AveStm);
     }
 
     public void StaminaDeplete(float amt) {

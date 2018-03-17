@@ -46,7 +46,6 @@ public class PlayerTransform : MonoBehaviour {
 
 
     [Header("debug")]
-    public TextMeshProUGUI Description;
     public bool canHop;
 
     void Start() {
@@ -56,14 +55,11 @@ public class PlayerTransform : MonoBehaviour {
 
         PlayerSprite = GetComponent<SpriteRenderer>();
         PlayerSprite.color = Current.BaseColor;
-
-        //debug
-        Description.text = Current.Desc;
     }
 
     void Update() {
-        if (Input.GetButtonDown("LB")) ChangePrevious();
-        if (Input.GetButtonDown("RB")) ChangeNext();
+        if (Input.GetButtonDown("LB") && Forms.Count >= 1) ChangePrevious();
+        if (Input.GetButtonDown("RB") && Forms.Count >= 1) ChangeNext();
 
         if (Input.GetButtonDown("Ability") && pMovement.GetGround) Current.UseGroundAbility();
         if (Input.GetButtonDown("Ability") && !pMovement.GetGround) Current.UseAerialAbility();
@@ -111,9 +107,6 @@ public class PlayerTransform : MonoBehaviour {
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
         wRunning = false;
-
-        //debug
-        Description.text = Current.Desc;
     }
 
     void ChangePrevious() {
@@ -133,9 +126,6 @@ public class PlayerTransform : MonoBehaviour {
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
         wRunning = false;
-
-        //debug
-        Description.text = Current.Desc;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

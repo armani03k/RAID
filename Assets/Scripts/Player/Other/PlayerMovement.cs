@@ -98,6 +98,17 @@ public class PlayerMovement : MonoBehaviour {
             canJump = false;
             grounded = false;
         }
+
+        //raycasts
+        //ground check
+        if (grounded && rb.velocity.y != 0) grounded = false;
+        if (!grounded) {
+            RaycastHit2D groundray = Physics2D.Linecast(rb.position, rb.position + -Vector2.up * 0.1f, 1 << LayerMask.NameToLayer("Ground"));
+            if (groundray.collider != null) {
+                if (groundray.collider.gameObject.CompareTag("Ground") && rb.velocity.y <= 0) OnPlatformHit();
+            }
+            
+        }
     }
 
     //physics calculation
@@ -109,6 +120,7 @@ public class PlayerMovement : MonoBehaviour {
 
         } else {
             isMoving = false;
+            if (canDash && grounded) rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
