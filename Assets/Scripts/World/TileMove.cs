@@ -21,26 +21,27 @@ public class TileMove : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        transform.position += (new Vector3(Dir.x, Dir.y, 0) * transform.localScale.x) * Spd * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, AreaB.transform.position, Spd * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, AreaB.position) <= 0.1f) {
             if (!cycle) AreaB.position = originPos;
             else AreaB.position = targetPos;
 
             cycle = !cycle;
-            Flip();
         }
 	}
 
-    void Flip() {
-        var scale = this.transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
-
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            collision.gameObject.transform.position += (new Vector3(Dir.x, 0, 0) * transform.localScale.x) * Spd * Time.fixedDeltaTime; //add platform force
+            collision.gameObject.transform.SetParent(this.gameObject.transform);
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            collision.gameObject.transform.SetParent(null);
+        }
+    }
+
+
 }

@@ -9,7 +9,7 @@ public class TileBounce : MonoBehaviour {
     private void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player")){
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(Dir * TrampolineFrc);
-            other.gameObject.GetComponent<PlayerMovement>().SetGround = false;
+            other.gameObject.GetComponent<PlayerMovement>().SetJump  = false;
         }
     }
 }

@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour {
     //barfill
     private Color fullCol;
     private Color lowCol;
+    private float baseT = 0;
 
     [Header("UI")]
     public Image HPImg;
@@ -48,7 +49,7 @@ public class PlayerStats : MonoBehaviour {
         trueHP = BaseHP;
         trueStamina = BaseStamina;
 
-        fullCol = Color.white;
+        fullCol = Color.green;
         lowCol = Color.red;
 
         UIUpdate();
@@ -62,15 +63,30 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public void UIUpdate() {
-        HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount,AveHP, BarFillSpd);
-        StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd);
+        StartCoroutine(UIAnimScale(5));
 
         //change color
-        StmImg.color = Color.Lerp(lowCol, fullCol, AveStm);
+        HPImg.color = Color.Lerp(lowCol, fullCol, AveHP);
     }
 
     public void StaminaDeplete(float amt) {
         if (trueStamina > 0) trueStamina -= amt;
         if (trueStamina <= 0) trueStamina = 0;
+    }
+
+    public void TakeDmg(float amt) {
+        if (trueHP > 0) trueHP -= amt;
+        if (trueHP <= 0) trueHP = 0;
+    }
+
+    IEnumerator UIAnimScale(float t) {
+        while (baseT < t) {
+            baseT += Time.deltaTime;
+            HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
+            StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd * Time.deltaTime   );
+            yield return null;
+        }
+
+        baseT = 0;
     }
 }
