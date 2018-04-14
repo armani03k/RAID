@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Dash")]
     public float DashSpd;
     public float DashDuration;
+    private bool dashAnim = false;
 
     Animator anim;
     Rigidbody2D rb;
@@ -86,6 +87,7 @@ public class PlayerMovement : MonoBehaviour {
         anim.SetBool("Grounded", grounded);
         anim.SetBool("IsMoving", isMoving);
         anim.SetFloat("Velocity", rb.velocity.y);
+        anim.SetBool("Dashing", dashAnim);
     }
 
     void LateUpdate() {
@@ -128,15 +130,18 @@ public class PlayerMovement : MonoBehaviour {
     IEnumerator Dash(float dashDur) {
         float dashTime = 0;
         canDash = false;
+        anim.SetTrigger("Dash");
+        dashAnim = true;
 
         //dash logic
-        while(dashTime < dashDur) {
+        while (dashTime < dashDur) {
             dashTime += Time.deltaTime;
             rb.velocity = new Vector2(DashSpd * transform.localScale.x, rb.velocity.y);
             yield return 0;
         }
 
         //check if player is grounded
+        dashAnim = false;
         if (grounded && !canDash) canDash = true;
 
         //revert back to normal movement

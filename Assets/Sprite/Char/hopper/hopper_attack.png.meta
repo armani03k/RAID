@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: a9afe0d77fa4fc8479429023fbe39f14
-timeCreated: 1519478032
+guid: ee1b71e6adeb7444da7672c615ef4a8c
+timeCreated: 1523258471
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: RAID_0
-    21300002: RAID_1
-    21300004: RAID_2
-    21300006: RAID_3
-    21300008: RAID_4
-    21300010: RAID_5
+    21300000: hopper_attack_0
+    21300002: hopper_attack_1
+    21300004: hopper_attack_2
+    21300006: hopper_attack_3
+    21300008: hopper_attack_4
+    21300010: hopper_attack_5
+    21300012: hopper_attack_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -42,17 +43,17 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 200
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -126,85 +127,71 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RAID_0
+      name: hopper_attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 512
+        width: 75
+        height: 165
       alignment: 9
-      pivot: {x: 0.7644711, y: 0.0708583}
+      pivot: {x: 0.45139343, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: RAID_1
+      name: hopper_attack_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 112
         y: 0
-        width: 256
-        height: 512
+        width: 80
+        height: 165
       alignment: 9
-      pivot: {x: 0.7644712, y: 0.06836329}
+      pivot: {x: 0.42488688, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: RAID_2
+      name: hopper_attack_3
       rect:
         serializedVersion: 2
-        x: 512
+        x: 213
         y: 0
-        width: 256
-        height: 512
+        width: 118
+        height: 165
       alignment: 9
-      pivot: {x: 0.7594812, y: 0.06337327}
+      pivot: {x: 0.32782796, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: RAID_3
+      name: hopper_attack_4
       rect:
         serializedVersion: 2
-        x: 768
+        x: 368
         y: 0
-        width: 256
-        height: 512
+        width: 118
+        height: 165
       alignment: 9
-      pivot: {x: 0.7694614, y: 0.0708583}
+      pivot: {x: 0.32540298, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: RAID_4
+      name: hopper_attack_5
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 513
         y: 0
-        width: 256
-        height: 512
+        width: 118
+        height: 165
       alignment: 9
-      pivot: {x: 0.764472, y: 0.07584832}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: RAID_5
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 512
-      alignment: 9
-      pivot: {x: 0.76447153, y: 0.06836329}
+      pivot: {x: 0.3278281, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

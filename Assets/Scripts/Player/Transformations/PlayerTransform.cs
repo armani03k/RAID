@@ -48,6 +48,10 @@ public class PlayerTransform : MonoBehaviour {
     [Header("debug")]
     public bool canHop;
 
+    Animator anim;
+    private bool skill = false;
+    private bool attack = false;
+
     void Start() {
         Current.gameObject.SetActive(true);
         bJump = GetComponent<BetterJump>();
@@ -55,11 +59,18 @@ public class PlayerTransform : MonoBehaviour {
 
         PlayerSprite = GetComponent<SpriteRenderer>();
         PlayerSprite.color = Current.BaseColor;
+
+        anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = Current.anim;
     }
 
     void Update() {
+
         if (Input.GetButtonDown("LB") && Forms.Count >= 1) ChangePrevious();
         if (Input.GetButtonDown("RB") && Forms.Count >= 1) ChangeNext();
+
+        if (Input.GetButtonDown("Fire") && pMovement.GetGround) Current.UseGroundAttack();
+        if (Input.GetButtonDown("Fire") && !pMovement.GetGround) Current.UseAerialAttack();
 
         if (Input.GetButtonDown("Ability") && pMovement.GetGround) Current.UseGroundAbility();
         if (Input.GetButtonDown("Ability") && !pMovement.GetGround) Current.UseAerialAbility();
@@ -198,5 +209,26 @@ public class PlayerTransform : MonoBehaviour {
         }
         #endregion
 
+    }
+
+    //animation events
+    public void EnableMoveActionEvent() {
+        pMovement.enabled = true;
+        
+    }
+
+    public void DisableMoveActionEvent() {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        pMovement.enabled = false;
+    }
+
+    public void SkillAnimToggle() {
+        skill = !skill;
+        anim.SetBool("Skill", skill);
+    }
+
+    public void AttackAnimToggle() {
+        attack = !attack;
+        anim.SetBool("Attacking", attack);
     }
 }

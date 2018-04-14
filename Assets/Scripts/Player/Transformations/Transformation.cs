@@ -15,16 +15,23 @@ public class Transformation : MonoBehaviour {
     public float PrimaryCost;
     public float AbilityCost;
 
-    //architecture
-    public virtual void Primary() {
+    public RuntimeAnimatorController anim;
 
-    }
+    //architecture
 
     public virtual void UseGroundAbility() {
 
     }
 
     public virtual void UseAerialAbility() {
+
+    }
+
+    public virtual void UseGroundAttack() {
+
+    }
+
+    public virtual void UseAerialAttack() {
 
     }
 }

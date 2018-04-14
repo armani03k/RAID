@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: e0f5a16130b650e439baf5ed5e330589
+timeCreated: 1523711306
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hopper - Super Kick_0
+    21300002: Hopper - Super Kick_1
+    21300004: Hopper - Super Kick_2
+    21300006: Hopper - Super Kick_3
+    21300008: Hopper - Super Kick_4
+    21300010: Hopper - Super Kick_5
+    21300012: Hopper - Super Kick_6
+    21300014: Hopper - Super Kick_7
+    21300016: Hopper - Super Kick_8
+    21300018: Hopper - Super Kick_9
+    21300020: Hopper - Super Kick_10
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hopper - Super Kick_0
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 330
+        width: 196
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5352079, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_1
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 331
+        width: 190
+        height: 94
+      alignment: 9
+      pivot: {x: 0.56199116, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_2
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 294
+        width: 298
+        height: 169
+      alignment: 9
+      pivot: {x: 0.44903442, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_3
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 283
+        width: 313
+        height: 207
+      alignment: 9
+      pivot: {x: 0.44008142, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_4
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 265
+        width: 334
+        height: 232
+      alignment: 9
+      pivot: {x: 0.42295572, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 33
+        width: 285
+        height: 200
+      alignment: 9
+      pivot: {x: 0.50761473, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_6
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 36
+        width: 276
+        height: 201
+      alignment: 9
+      pivot: {x: 0.49685493, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_7
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 28
+        width: 291
+        height: 214
+      alignment: 9
+      pivot: {x: 0.49552536, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_8
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 29
+        width: 269
+        height: 212
+      alignment: 9
+      pivot: {x: 0.5387249, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_9
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 28
+        width: 278
+        height: 214
+      alignment: 9
+      pivot: {x: 0.5234195, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hopper - Super Kick_10
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 42
+        width: 211
+        height: 181
+      alignment: 9
+      pivot: {x: 0.52879936, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
