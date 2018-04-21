@@ -118,6 +118,9 @@ public class PlayerTransform : MonoBehaviour {
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
         wRunning = false;
+
+        //change anim controller
+        anim.runtimeAnimatorController = Current.anim;
     }
 
     void ChangePrevious() {
@@ -137,6 +140,9 @@ public class PlayerTransform : MonoBehaviour {
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
         wRunning = false;
+
+        //change anim controller
+        anim.runtimeAnimatorController = Current.anim;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

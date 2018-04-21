@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114184990332596392, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: Forms.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4930781796068176, guid: 413193b94f089e245847b936fdd0fd81, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.3
@@ -167,6 +172,42 @@ Prefab:
       propertyPath: AtkCD
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 95310256951901288, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e93fad42077d6f4d9681483b2c9e2a0, type: 2}
+    - target: {fileID: 114184990332596392, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: Forms.Array.data[0]
+      value: 
+      objectReference: {fileID: 893612906}
+    - target: {fileID: 114950216415947978, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: BaseColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114950216415947978, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: BaseColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114950216415947978, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: BaseColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114950216415947978, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e93fad42077d6f4d9681483b2c9e2a0, type: 2}
+    - target: {fileID: 212788658712625452, guid: 413193b94f089e245847b936fdd0fd81,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1c363c888d1de64d980bf8dea126eb7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413193b94f089e245847b936fdd0fd81, type: 2}
   m_IsPrefabParent: 0
@@ -849,6 +890,12 @@ Transform:
   m_Father: {fileID: 1773244143}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893612906 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114950216415947978, guid: 413193b94f089e245847b936fdd0fd81,
+    type: 2}
+  m_PrefabInternal: {fileID: 12358703}
+  m_Script: {fileID: 11500000, guid: c341b8e1147124e4f8a0422c13dfdd9e, type: 3}
 --- !u!1 &923080710
 GameObject:
   m_ObjectHideFlags: 0
