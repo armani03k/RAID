@@ -35,28 +35,32 @@ public class BaseForm : Transformation {
     }
 
     public override void UseGroundAttack() {
-        if (atkTimer >= AtkCD) {
+        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost) {
             PlayerAnim.SetTrigger("Attack");
             atkTimer = 0;
+            pStat.StaminaDeplete(PrimaryCost);
         }
     }
 
     public override void UseAerialAttack() {
-        if (atkTimer >= AtkCD) {
+        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost) {
             PlayerAnim.SetTrigger("Attack");
             atkTimer = 0;
+            pStat.StaminaDeplete(PrimaryCost);
         }
     }
 
     public override void UseAerialAbility() {
-        if (skillTimer >= AbilityCD) {
+        if (skillTimer >= AbilityCD && pStat.StaminaRef >= AbilityCost) {
+            pStat.StaminaDeplete(AbilityCost);
             PlayerAnim.SetTrigger("Ability");
             skillTimer = 0;
         }
     }
 
     public override void UseGroundAbility() {
-        if (skillTimer >= AbilityCD){
+        if (skillTimer >= AbilityCD && pStat.StaminaRef >= AbilityCost) {
+            pStat.StaminaDeplete(AbilityCost);
             PlayerAnim.SetTrigger("Ability");
             skillTimer = 0;
         }

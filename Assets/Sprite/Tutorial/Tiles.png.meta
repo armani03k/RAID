@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 518e93c361acf0f458e494a21791ddfe
-timeCreated: 1524366973
+guid: 8eacc847f0892af429ef736ce5d825f1
+timeCreated: 1524376858
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Tiger - Jump_0
-    21300002: Tiger - Jump_1
-    21300004: Tiger - Jump_2
-    21300006: Tiger - Jump_3
+    21300000: Tiles_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -35,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -50,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -124,57 +121,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiger - Jump_0
+      name: Tiles_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 35
-        width: 176
-        height: 140
+        x: 1394
+        y: 1827
+        width: 131
+        height: 206
       alignment: 9
-      pivot: {x: 0.51569474, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tiger - Jump_1
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 34
-        width: 209
-        height: 173
-      alignment: 9
-      pivot: {x: 0.52423036, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tiger - Jump_2
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 49
-        width: 106
-        height: 144
-      alignment: 9
-      pivot: {x: 0.33061594, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tiger - Jump_3
-      rect:
-        serializedVersion: 2
-        x: 712
-        y: 33
-        width: 150
-        height: 198
-      alignment: 9
-      pivot: {x: 0.48772338, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -34,14 +34,14 @@ public class PlayerTransform : MonoBehaviour {
     [Header("Tiger")]
     public float WRunDescend;
     private float descendTick = 0;
-    private float descendTimer = 0.5f;
+    private float descendTimer = 0.25f;
     private bool descending;
     #endregion
 
     [Header("Forms")]
     public Transformation Current;
     public List<Transformation> Forms;
-
+        
     SpriteRenderer PlayerSprite;
 
 
@@ -176,8 +176,10 @@ public class PlayerTransform : MonoBehaviour {
             if (!wRunning) {
                 bJump.FallMultiplier = WRunDescend;
                 wRunning = true;
+                anim.SetTrigger("WRun");
                 return;
             }
+            anim.SetBool("WallRun", wRunning);
         }
         if (other.gameObject.CompareTag("Wall") && !Input.GetButton("Jump") && WallRun) {
             if (wRunning) {
@@ -190,6 +192,7 @@ public class PlayerTransform : MonoBehaviour {
                 this.GetComponent<Rigidbody2D>().drag = 0;
                 return;
             }
+            anim.SetBool("WallRun", wRunning);
         }
         #endregion
     }
@@ -212,6 +215,8 @@ public class PlayerTransform : MonoBehaviour {
             descending = false;
             descendTick = 0;
             this.GetComponent<Rigidbody2D>().drag = 0;
+
+            anim.SetBool("WallRun", wRunning);
         }
         #endregion
 

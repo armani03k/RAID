@@ -210,7 +210,7 @@ Animator:
   m_GameObject: {fileID: 1243332558412404}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2482973d9a8caa1448fcacff57ae9db0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5e93fad42077d6f4d9681483b2c9e2a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,12 +231,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseColor: {r: 1, g: 1, b: 1, a: 1}
   Desc: '[Default Form] [Primary: Melee]  [Abilities: Heavy Attack]'
-  PrimaryCost: 1
-  AbilityCost: 1
+  PrimaryCost: 10
+  AbilityCost: 25
   anim: {fileID: 9100000, guid: 2482973d9a8caa1448fcacff57ae9db0, type: 2}
   Form: {fileID: 114184990332596392}
   PlayerAnim: {fileID: 95310256951901288}
   AbilityCD: 0.5
+  AtkCD: 0.15
 --- !u!114 &114184990332596392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,7 +257,8 @@ MonoBehaviour:
   HopDelay: 0.1
   WRunDescend: -0.4
   Current: {fileID: 114170572152893498}
-  Forms: []
+  Forms:
+  - {fileID: 114950216415947978}
   canHop: 0
 --- !u!114 &114355128967541106
 MonoBehaviour:
@@ -335,14 +337,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c341b8e1147124e4f8a0422c13dfdd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseColor: {r: 1, g: 0.9724138, b: 0, a: 1}
+  BaseColor: {r: 1, g: 1, b: 1, a: 1}
   Desc: '[Tiger Form] [Primary: Melee]  [Abilities: Pounce, Wall Run]'
-  PrimaryCost: 0
+  PrimaryCost: 10
   AbilityCost: 30
-  anim: {fileID: 0}
+  anim: {fileID: 9100000, guid: 5e93fad42077d6f4d9681483b2c9e2a0, type: 2}
   User: {fileID: 114659016835294990}
   Form: {fileID: 114184990332596392}
   DashMult: 1.15
+  PlayerAnim: {fileID: 95310256951901288}
+  AbilityCD: 0.5
+  AtkCD: 0.15
 --- !u!212 &212788658712625452
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -377,12 +382,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f4249c67350fa04f83a9869f7301ca3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1c363c888d1de64d980bf8dea126eb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.375, y: 0.825}
+  m_Size: {x: 0.815, y: 0.835}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
