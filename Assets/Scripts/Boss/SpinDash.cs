@@ -48,8 +48,7 @@ public class SpinDash : AttackPattern {
         yield return null;
     }
 
-
-
+    ///Function to call to move boss in first anim tranformation and for all collisions that come after.
     void DashTowards()
     {
         m_direction = target.transform.position - transform.position;
@@ -77,6 +76,7 @@ public class SpinDash : AttackPattern {
             
     }
 
+    ///Function called in Spin Dash Animation to transfer current anim to ball form anim.
     public void BallTransform()
     {
         m_bossAI.GetAnimator.SetFloat("AttackIndex", 1);
@@ -84,6 +84,7 @@ public class SpinDash : AttackPattern {
         m_dash = true;
     }
 
+    ///Checks if the taunt time elapsed is over.
     bool IsDoneTaunting()
     {
         if (!m_taunt)
@@ -107,7 +108,8 @@ public class SpinDash : AttackPattern {
     {
         m_bossAI.GetAnimator.SetBool("Taunt", false);
         base.EndAttack();
-        
+        m_taunt = false;
+        m_dash = false;
         m_numberOfBounces = 0;
         m_tauntTimer = 0;
         m_direction = Vector2.zero;

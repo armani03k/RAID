@@ -14,6 +14,12 @@ public abstract class AttackPattern : MonoBehaviour {
         get { return m_isFinished; }
     }
 
+    //Used to call that attack pattern is finished outside of script.
+    public void FinishAttackPattern()
+    {
+        m_isFinished = true;
+    }
+
     //To reset Attack pattern once attack state has exited.
     protected void ResetPattern()
     {
