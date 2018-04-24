@@ -7,6 +7,7 @@ public class EnemyStat : ScriptableObject {
 
     public string Name;
     public float HP;
+    public float MaxHP;
     public float Dmg;
     public Color BaseSkin;
 }

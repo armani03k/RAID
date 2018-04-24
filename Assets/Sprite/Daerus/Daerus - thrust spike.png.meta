@@ -1,9 +1,22 @@
 fileFormatVersion: 2
 guid: ea13f1e3adaacbb4baa17b843c4a598b
-timeCreated: 1524451477
+timeCreated: 1524550159
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Daerus - thrust spike_0
+    21300002: Daerus - thrust spike_1
+    21300004: Daerus - thrust spike_2
+    21300006: Daerus - thrust spike_3
+    21300008: Daerus - thrust spike_4
+    21300010: Daerus - thrust spike_5
+    21300012: Daerus - thrust spike_6
+    21300014: Daerus - thrust spike_7
+    21300016: Daerus - thrust spike_8
+    21300018: Daerus - thrust spike_11
+    21300020: Daerus - thrust spike_15
+    21300022: Daerus - thrust spike_16
+    21300024: Daerus - thrust spike_19
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,9 +79,211 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Daerus - thrust spike_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 398
+        width: 143
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 398
+        width: 143
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_2
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 398
+        width: 143
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_3
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 398
+        width: 143
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_4
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 429
+        width: 174
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_5
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 385
+        width: 280
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_6
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 411
+        width: 329
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_7
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 405
+        width: 343
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_8
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 57
+        width: 432
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 59
+        width: 425
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_15
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 49
+        width: 114
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_16
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 49
+        width: 412
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Daerus - thrust spike_19
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 49
+        width: 389
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

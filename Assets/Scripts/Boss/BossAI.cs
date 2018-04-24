@@ -69,13 +69,14 @@ public class BossAI : MonoBehaviour {
         if (m_currentAttack == null && m_EnemyStat.HP > 0)
             m_attackTransitionTimer += Time.deltaTime;
 
-        if (m_attackTransitionTimer > m_AttackTransitionTime && m_attackPatterns.Count != 0)
+        if (m_attackTransitionTimer > m_AttackTransitionTime && m_attackPatterns.Count != 0 && m_currentAttack == null)
         {
+            m_currentAttack = m_attackPatterns[m_attackIndex];
+            StartCoroutine(m_currentAttack.Attack());
+
             //Increment Attack index without going over the number of attack patterns detected.
             m_attackIndex = (m_attackIndex + 1) % m_attackPatterns.Count;
 
-            m_currentAttack = m_attackPatterns[m_attackIndex];
-            StartCoroutine(m_currentAttack.Attack());
             m_attackTransitionTimer = 0;
         }
 

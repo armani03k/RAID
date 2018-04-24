@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 1475578012}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,9 +631,10 @@ GameObject:
   - component: {fileID: 1714692855}
   - component: {fileID: 1714692858}
   - component: {fileID: 1714692859}
+  - component: {fileID: 1714692862}
   m_Layer: 0
   m_Name: Daerus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,7 +715,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714692854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3583965, y: -3.6474857, z: 0}
+  m_LocalPosition: {x: 6.2, y: -3.6474857, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -750,6 +751,7 @@ MonoBehaviour:
   ChargeUpDelay: 2
   DashDelay: 2
   Speed: 200
+  TauntTime: 2
   NumberOfBounces: 6
 --- !u!95 &1714692860
 Animator:
@@ -788,6 +790,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1714692862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714692854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd47c53602b33c478ae9c4f172e6072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1475578008}
+  DashForce: 1000
 --- !u!1 &1883542180
 GameObject:
   m_ObjectHideFlags: 0

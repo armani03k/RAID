@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AttackPattern : MonoBehaviour {
 
     public GameObject target;
+    protected BossAI m_bossAI;
     protected bool m_isFinished;
 
     //Boolean to check if attack pattern is finished to exit attack state.
