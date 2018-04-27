@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpinDash : AttackPattern {
 
+    public SubPattern ThrustSpike;
     public float ChargeUpDelay;
     public float DashDelay;
     public float Speed;
@@ -19,13 +20,14 @@ public class SpinDash : AttackPattern {
 	// Use this for initialization
 	void Start () {
         m_bossAI = GetComponent<BossAI>();
-	}
+        ThrustSpike.Target = target;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (m_numberOfBounces > NumberOfBounces && m_bossAI.m_EnemyStat.HP > m_bossAI.m_EnemyStat.MaxHP/2 && !m_taunt)
         {
-            Debug.Log("ff");
             Taunt();
         }
 
@@ -33,6 +35,13 @@ public class SpinDash : AttackPattern {
         {
             m_bossAI.GetRigidBody.velocity = (m_direction * Speed * Time.deltaTime);
         }
+
+        if (ThrustSpike != null && ThrustSpike.IsFinished && !m_taunt)
+        {
+            Taunt();
+            ThrustSpike.EndAttack();
+        }
+            
 
         if (IsDoneTaunting())
             m_isFinished = true;
@@ -61,17 +70,14 @@ public class SpinDash : AttackPattern {
             DashTowards();
 
 
-        if (m_numberOfBounces > NumberOfBounces && m_bossAI.m_EnemyStat.HP < m_bossAI.m_EnemyStat.MaxHP / 2)
+        if (ThrustSpike == null)
+            return;
+
+        if (m_numberOfBounces > NumberOfBounces && m_bossAI.m_EnemyStat.HP < m_bossAI.m_EnemyStat.MaxHP / 2 && m_dash)
         {
             m_dash = false;
             m_bossAI.GetRigidBody.velocity = Vector2.zero;
-            StartCoroutine(GetComponent<ThrustSpike>().Attack());
-        }
-
-        if (GetComponent<ThrustSpike>().IsFinished == true)
-        {
-            GetComponent<ThrustSpike>().EndAttack();
-            Taunt();
+            StartCoroutine(ThrustSpike.Activate());
         }
             
     }
