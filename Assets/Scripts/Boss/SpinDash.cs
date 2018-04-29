@@ -66,7 +66,7 @@ public class SpinDash : AttackPattern {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall") && !m_isFinished && m_bossAI.CurrentAttackPattern == this)
+        if ((collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground")) && !m_isFinished && m_bossAI.CurrentAttackPattern == this)
             DashTowards();
 
 
