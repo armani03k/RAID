@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundPound : SubPattern {
 
+    public List<GPSpikes> Spikes;
     public bool Activated;
     public float DropSpeed;
     bool m_descending;
@@ -33,11 +34,16 @@ public class GroundPound : SubPattern {
             return;
 
         m_bossAI.GetAnimator.SetFloat("AttackIndex", -2);
-        m_bossAI.GetRigidBody.velocity = Vector2.zero; 
+        m_bossAI.GetRigidBody.velocity = Vector2.zero;
+        foreach (GPSpikes gps in Spikes)
+        {
+            gps.Activate();
+        }
     }
 
     void Pounded()
     {
+
         m_descending = false;
         m_attackPatternParent.FinishAttackPattern();
     }

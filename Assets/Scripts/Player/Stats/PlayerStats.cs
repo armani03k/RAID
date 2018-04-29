@@ -90,8 +90,8 @@ public class PlayerStats : MonoBehaviour {
 
         while (baseT < t) {
             baseT += Time.deltaTime;
-            //HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
-            //StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd * Time.deltaTime);
+            HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
+            StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd * Time.deltaTime);
             yield return null;
         }
 

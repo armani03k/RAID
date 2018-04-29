@@ -6,7 +6,7 @@ public class BlastProjectile : MonoBehaviour {
 
 
     public float BlastSpeed;
-
+    public float Damage;
     private void Start()
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.down * BlastSpeed);
@@ -15,6 +15,11 @@ public class BlastProjectile : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GetComponent<Animator>().SetTrigger("Disperse");
+
+        if (collision.gameObject.GetComponent<PlayerStats>() != null)
+        {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDmg(Damage);
+        }
     }
 
     void Disperse()

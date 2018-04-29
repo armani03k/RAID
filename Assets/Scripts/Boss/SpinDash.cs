@@ -33,7 +33,7 @@ public class SpinDash : AttackPattern {
 
         if (m_dash)
         {
-            m_bossAI.GetRigidBody.velocity = (m_direction * Speed * Time.deltaTime);
+            m_bossAI.GetRigidBody.velocity = (m_direction.normalized * Speed * Time.deltaTime);
         }
 
         if (ThrustSpike != null && ThrustSpike.IsFinished && !m_taunt)
