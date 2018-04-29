@@ -12,7 +12,14 @@ public class PlayerTransform : MonoBehaviour {
     [Header("Skill Perks")]
     public bool WallHop;
     public bool WallRun;
+    //tiger
     private bool wRunning;
+    public bool getWRunState {
+        get {
+            return wRunning;
+        }
+    }
+
     public bool FlameOn;
     //public bool Glide;
 
@@ -114,6 +121,14 @@ public class PlayerTransform : MonoBehaviour {
         //turn back params (good good practice)
         pMovement.JumpForce = pMovement.DefaultJumpForce;
         bJump.FallMultiplier = bJump.FallDefault;
+        
+        //animation reset
+        pMovement.enabled = true;
+        skill = false;
+        anim.SetBool("Skill", skill);
+        attack = false;
+        anim.SetBool("Attacking", attack);
+
 
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
@@ -136,6 +151,13 @@ public class PlayerTransform : MonoBehaviour {
         //params
         pMovement.JumpForce = pMovement.DefaultJumpForce;
         bJump.FallMultiplier = bJump.FallDefault;
+
+        //animation reset
+        pMovement.enabled = true;
+        skill = false;
+        anim.SetBool("Skill", skill);
+        attack = false;
+        anim.SetBool("Attacking", attack);
 
         //tiger
         this.GetComponent<Rigidbody2D>().drag = 0;
@@ -165,7 +187,7 @@ public class PlayerTransform : MonoBehaviour {
         #region Tiger
         if (other.gameObject.CompareTag("Wall") && WallRun) pMovement.JumpForce = 6.0f;
 
-        if (other.gameObject.CompareTag("Wall") && Input.GetButton("Jump") && WallRun) {
+        if (other.gameObject.CompareTag("Wall") && Input.GetButton("Jump") && WallRun && pMovement.GetDash) {
             //descent prompt
             if (descendTick < descendTimer) descendTick += Time.deltaTime;
             else if (!descending && descendTick >= descendTimer) {
@@ -194,6 +216,21 @@ public class PlayerTransform : MonoBehaviour {
             }
             anim.SetBool("WallRun", wRunning);
         }
+
+        //wallrun disable
+        if (other.gameObject.CompareTag("Wall") && !pMovement.GetDash) {
+            if (wRunning) {
+                wRunning = false;
+                bJump.FallMultiplier = bJump.FallDefault;
+
+                //return descent
+                descending = false;
+                descendTick = 0;
+                this.GetComponent<Rigidbody2D>().drag = 0;
+                return;
+            }
+        }
+
         #endregion
     }
 
@@ -225,7 +262,6 @@ public class PlayerTransform : MonoBehaviour {
     //animation events
     public void EnableMoveActionEvent() {
         pMovement.enabled = true;
-        
     }
 
     public void DisableMoveActionEvent() {
@@ -235,11 +271,15 @@ public class PlayerTransform : MonoBehaviour {
 
     public void SkillAnimToggle() {
         skill = !skill;
+        attack = false;
         anim.SetBool("Skill", skill);
+        anim.SetBool("Attacking", attack);
     }
 
     public void AttackAnimToggle() {
         attack = !attack;
+        skill = false;
         anim.SetBool("Attacking", attack);
+        anim.SetBool("Skill", skill);
     }
 }

@@ -28,6 +28,8 @@ AnimationClip:
       value: {fileID: 21300006, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
     - time: 0.08888889
       value: {fileID: 21300008, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
+    - time: 0.11111111
+      value: {fileID: 21300008, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,12 +54,13 @@ AnimationClip:
     - {fileID: 21300004, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
     - {fileID: 21300006, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
     - {fileID: 21300008, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
+    - {fileID: 21300008, guid: bd852ac8ea96dcb4bada74b6217bba3e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.22222222
+    m_StopTime: 0.13333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,7 +88,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.22222222
+  - time: 0.08888889
     functionName: SkillAnimToggle
     data: 
     objectReferenceParameter: {fileID: 0}

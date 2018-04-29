@@ -27,6 +27,9 @@ public class TigerForm : Transformation {
 
     private void OnDisable() {
         Form.WallRun = false;
+
+        User.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (User.GetGround) User.SetDash = true;
     }
 
     private void Update() {
@@ -35,7 +38,7 @@ public class TigerForm : Transformation {
     }
 
     public override void UseGroundAttack() {
-        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost) {
+        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost && !Form.getWRunState) {
             PlayerAnim.SetTrigger("Attack");
             atkTimer = 0;
             pStat.StaminaDeplete(PrimaryCost);
@@ -43,7 +46,7 @@ public class TigerForm : Transformation {
     }
 
     public override void UseAerialAttack() {
-        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost) {
+        if (atkTimer >= AtkCD && pStat.StaminaRef >= PrimaryCost && !Form.getWRunState) {
             PlayerAnim.SetTrigger("Attack");
             atkTimer = 0;
             pStat.StaminaDeplete(PrimaryCost);
