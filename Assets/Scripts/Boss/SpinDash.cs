@@ -77,7 +77,7 @@ public class SpinDash : AttackPattern {
         {
             m_dash = false;
             m_bossAI.GetRigidBody.velocity = Vector2.zero;
-            StartCoroutine(ThrustSpike.Activate());
+            StartCoroutine(ThrustSpike.Activate(this));
         }
             
     }

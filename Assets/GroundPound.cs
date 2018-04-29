@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPound : MonoBehaviour {
+public class GroundPound : SubPattern {
 
     public bool Activated;
     public float DropSpeed;
-
-    BossAI m_bossAI;
-    AttackPattern m_attackPatternParent;
     bool m_descending;
 	// Use this for initialization
 	void Start () {
@@ -20,13 +17,14 @@ public class GroundPound : MonoBehaviour {
 		
 	}
 
-    public void Descend(AttackPattern caller)
+    public override IEnumerator Activate(AttackPattern caller)
     {
         m_descending = true;
         Activated = true;
         m_bossAI.GetAnimator.SetFloat("AttackIndex", -1);
         m_bossAI.GetRigidBody.AddForce(Vector2.down * DropSpeed);
         m_attackPatternParent = caller;
+        yield return null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,7 +38,6 @@ public class GroundPound : MonoBehaviour {
 
     void Pounded()
     {
-        Debug.Log("WTF");
         m_descending = false;
         m_attackPatternParent.FinishAttackPattern();
     }

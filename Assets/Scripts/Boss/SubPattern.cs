@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class SubPattern : MonoBehaviour {
 
     public GameObject Target;
+    protected AttackPattern m_attackPatternParent;
     protected BossAI m_bossAI;
     protected bool m_isFinished;
 	// Use this for initialization
@@ -38,7 +39,7 @@ public abstract class SubPattern : MonoBehaviour {
         StopAllCoroutines();
     }
 
-    public abstract IEnumerator Activate();
+    public abstract IEnumerator Activate(AttackPattern caller);
 	// Update is called once per frame
 	void Update () {
 		

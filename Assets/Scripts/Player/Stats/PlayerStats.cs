@@ -66,6 +66,9 @@ public class PlayerStats : MonoBehaviour {
         StartCoroutine(UIAnimScale(5));
 
         //change color
+        if (HPImg == null)
+            return;
+
         HPImg.color = Color.Lerp(lowCol, fullCol, AveHP);
     }
 
@@ -75,15 +78,20 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public void TakeDmg(float amt) {
+        
         if (trueHP > 0) trueHP -= amt;
         if (trueHP <= 0) trueHP = 0;
+        Debug.Log(trueHP);
     }
 
     IEnumerator UIAnimScale(float t) {
+        if (HPImg == null || StmImg == null)
+            yield return null;
+
         while (baseT < t) {
             baseT += Time.deltaTime;
-            HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
-            StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd * Time.deltaTime);
+            //HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
+            //StmImg.fillAmount = Mathf.Lerp(StmImg.fillAmount, AveStm, BarFillSpd * Time.deltaTime);
             yield return null;
         }
 

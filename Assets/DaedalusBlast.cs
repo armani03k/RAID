@@ -32,7 +32,7 @@ public class DaedalusBlast : AttackPattern {
 
         if (m_numberOfShots > NumberOfShots && GetComponent<GroundPound>() != null && !GetComponent<GroundPound>().Activated)
         {
-            GetComponent<GroundPound>().Descend(this);
+            StartCoroutine(GetComponent<GroundPound>().Activate(this));
             
         }
         //else if(m_numberOfShots > NumberOfShots && GetComponent<GroundPound>() == null)

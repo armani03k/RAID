@@ -17,11 +17,12 @@ public class ThrustSpike : SubPattern {
 		
 	}
 
-    public override IEnumerator Activate()
+    public override IEnumerator Activate(AttackPattern caller)
     {
         
         m_bossAI.GetAnimator.SetBool("Attack", true);
         m_bossAI.GetAnimator.SetFloat("AttackIndex", 2);
+        m_attackPatternParent = caller;
         yield return null;
     }
 
