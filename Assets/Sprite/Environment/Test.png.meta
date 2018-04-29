@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 443477ee5c8fb534faecff8fd54faf48
-timeCreated: 1524987418
+timeCreated: 1524988922
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Test_0
     21300002: Test_1
+    21300004: Test_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -44,11 +45,11 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 300
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -131,7 +132,7 @@ TextureImporter:
         height: 460
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 135, y: 195, z: 158, w: 144}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -143,6 +144,20 @@ TextureImporter:
         y: 0
         width: 508
         height: 460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 101, y: 157, z: 102, w: 159}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Test_2
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 0
+        width: 512
+        height: 387
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

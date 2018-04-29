@@ -120,8 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214248f5c3ce74e4f9c1f7259cd29665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemsToEnable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  ItemsToEnable: []
   Duration: 20
