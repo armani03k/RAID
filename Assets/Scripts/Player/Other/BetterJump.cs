@@ -18,7 +18,7 @@ public class BetterJump : MonoBehaviour {
 	
 	void Update () {
         //gravity proc
-		if (rb.velocity.y != 0 && ! pm.GetGround) {
+		if (rb.velocity.y != 0 && ! pm.GetGround && (rb.velocity.y > 1 || rb.velocity.y < -1)) {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier) * Time.deltaTime;
         }
 	}

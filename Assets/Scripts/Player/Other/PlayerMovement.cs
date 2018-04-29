@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //raycasts
         //ground check
-        if (grounded && rb.velocity.y != 0) grounded = false;
+        if (grounded && rb.velocity.y != 0 && (rb.velocity.y > 1 || rb.velocity.y < -1)) grounded = false;
         if (!grounded) {
             RaycastHit2D groundray = Physics2D.Linecast(rb.position, rb.position + -Vector2.up * 0.1f, 1 << LayerMask.NameToLayer("Ground"));
             if (groundray.collider != null) {
