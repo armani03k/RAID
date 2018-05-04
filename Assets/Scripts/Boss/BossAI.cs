@@ -10,7 +10,8 @@ public struct Stats
     public float m_AttackDamage;
 }
 
-public class BossAI : MonoBehaviour {
+public class BossAI : MonoBehaviour, IDamagable
+{
 
     
     public EnemyStat m_EnemyStat;
@@ -23,6 +24,7 @@ public class BossAI : MonoBehaviour {
     Rigidbody2D m_rigidbody2D;
     int m_attackIndex;
     float m_attackTransitionTimer;
+    float m_health;
 
     //public Stats m_Stat;
 	// Use this for initialization
@@ -30,7 +32,9 @@ public class BossAI : MonoBehaviour {
         m_animator = GetComponent<Animator>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_attackPatterns.AddRange(GetComponents<AttackPattern>());
-	}
+        m_health = m_EnemyStat.HP;
+
+    }
 
     //Reference to Current Units Attack Pattern. Used to manipulate outside of script such as State transitions.
     public AttackPattern CurrentAttackPattern
@@ -80,9 +84,18 @@ public class BossAI : MonoBehaviour {
             m_attackTransitionTimer = 0;
         }
 
-        if (m_EnemyStat.HP <= 0)
+        if (m_health <= 0)
             Die();
 	}
+
+    public void TakeDamage(float damage)
+    {
+        if (m_health - damage > 0) m_health -= damage;
+        if (m_health - damage < 0) m_health = 0;
+        if (m_currentAttack != null && m_currentAttack.IsDisruptable())
+            m_currentAttack.StopAttack();
+        Debug.Log(m_health);
+    }
 
     //To be called upon unit death.
     public void Die()
@@ -91,6 +104,7 @@ public class BossAI : MonoBehaviour {
             m_currentAttack.StopAttack();
         m_currentAttack = null;
         m_attackPatterns.Clear();
+        Destroy(gameObject);
     }
 
 }

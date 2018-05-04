@@ -8,11 +8,9 @@ public class StateController : MonoBehaviour {
 
     public State currentState;
     public State remainState;
-    public Transform eyes;
 
     [HideInInspector] public float stateTimeElapsed;
     [SerializeField] protected CharacterControl m_CharControl;
-    [HideInInspector] public Transform m_ChaseTarget;
     public List<Transform> wayPointList;
     public int nextWayPoint;
     // Use this for initialization
@@ -25,12 +23,17 @@ public class StateController : MonoBehaviour {
         get { return m_CharControl; }
     }
 
+    ///A time based Transitioning Condition.
     public bool CheckIfCountDownElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
         return (stateTimeElapsed >= duration);
     }
 
+    /// <summary>
+    /// Transitions to then next State if not remain in current state.
+    /// </summary>
+    /// <param name="nextState"></param>
     public virtual void TransitionToState(State nextState)
     {
         if (nextState != remainState)

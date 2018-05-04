@@ -92,6 +92,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: SetDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 7
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.1
+    functionName: ToggleAttackTriggers
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
+    messageOptions: 0
   - time: 0.2
     functionName: EnableMoveActionEvent
     data: 
@@ -105,4 +119,11 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
+    messageOptions: 0
+  - time: 0.2
+    functionName: DisableTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
     messageOptions: 0

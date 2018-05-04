@@ -44,10 +44,13 @@ public class DaedalusBlast : AttackPattern {
     {
         while(m_flyTimer < FlyUpTime)
         {
+            if (transform.position.y >= YLimit)
+                break;
             MoveUp();
             m_flyTimer += Time.deltaTime;
             yield return null;
         }
+        m_bossAI.GetRigidBody.velocity = Vector2.zero;
         m_inPosition = true;
         m_moving = true;
         yield return null;

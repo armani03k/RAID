@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cb33fcef45f17b4cbc7d7bce4ef66a8, type: 3}
-  m_Name: Daerus
+  m_Name: ArsSwordUnitStats
   m_EditorClassIdentifier: 
-  Name: Daerus
-  HP: 2000
-  MaxHP: 2000
-  Dmg: 20
-  BaseSkin: {r: 0.21323532, g: 1, b: 0.70699793, a: 0}
+  Name: ArsSword
+  HP: 1
+  MaxHP: 1
+  Dmg: 15
+  BaseSkin: {r: 1, g: 1, b: 1, a: 1}

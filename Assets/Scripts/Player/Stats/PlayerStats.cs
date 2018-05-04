@@ -81,7 +81,6 @@ public class PlayerStats : MonoBehaviour {
         
         if (trueHP > 0) trueHP -= amt;
         if (trueHP <= 0) trueHP = 0;
-        Debug.Log(trueHP);
     }
 
     IEnumerator UIAnimScale(float t) {

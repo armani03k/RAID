@@ -51,6 +51,10 @@ public class PlayerTransform : MonoBehaviour {
         
     SpriteRenderer PlayerSprite;
 
+    [Header("DamageTriggers")]
+    public List<PlayerDamageTrigger> Triggers;
+    public List<int> DamageValues;
+    float m_damage;
 
     [Header("debug")]
     public bool canHop;
@@ -274,6 +278,22 @@ public class PlayerTransform : MonoBehaviour {
         attack = false;
         anim.SetBool("Skill", skill);
         anim.SetBool("Attacking", attack);
+    }
+
+    public void SetDamage(float damage)
+    {
+        m_damage = damage;
+    }
+
+    public void ToggleAttackTriggers(int index)
+    {
+        Triggers[index].ActivateTrigger(m_damage);
+    }
+
+    public void DisableTrigger(int index)
+    {
+        Triggers[index].DisableDamaging();
+        m_damage = 0;
     }
 
     public void AttackAnimToggle() {

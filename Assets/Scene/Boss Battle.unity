@@ -1805,7 +1805,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1614548578}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.14, y: -5.09, z: -0.05859375}
+  m_LocalPosition: {x: 0.14, y: -5.51, z: -0.05859375}
   m_LocalScale: {x: 1, y: 17.815353, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2048,7 +2048,7 @@ MonoBehaviour:
   ThrustSpike: {fileID: 1714692862}
   ChargeUpDelay: 2
   DashDelay: 2
-  Speed: 2000
+  Speed: 3000
   TauntTime: 2
   NumberOfBounces: 6
 --- !u!95 &1714692860
@@ -2115,10 +2115,10 @@ MonoBehaviour:
   target: {fileID: 1985588936}
   Projectile: {fileID: 1935150794466544, guid: a9fa5981053d4024fabf6c6105294371, type: 2}
   SpawnPoint: {fileID: 505153704}
-  FlyUpTime: 1.5
+  FlyUpTime: 1
   FlySpeed: 500
   NumberOfShots: 6
-  YLimit: 10
+  YLimit: 0
 --- !u!114 &1714692864
 MonoBehaviour:
   m_ObjectHideFlags: 0

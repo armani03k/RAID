@@ -7,11 +7,17 @@ public abstract class AttackPattern : MonoBehaviour {
     public GameObject target;
     protected BossAI m_bossAI;
     protected bool m_isFinished;
+    protected bool m_distruptable;
 
     //Boolean to check if attack pattern is finished to exit attack state.
     public bool IsFinished
     {
         get { return m_isFinished; }
+    }
+
+    public virtual bool IsDisruptable()
+    {
+        return m_distruptable;
     }
 
     //Used to call that attack pattern is finished outside of script.

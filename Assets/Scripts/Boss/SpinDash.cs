@@ -57,16 +57,23 @@ public class SpinDash : AttackPattern {
         yield return null;
     }
 
+    public override bool IsDisruptable()
+    {
+        return (m_bossAI.CurrentAttackPattern == this && m_numberOfBounces <= 1);
+    }
+
     ///Function to call to move boss in first anim tranformation and for all collisions that come after.
     void DashTowards()
     {
         m_direction = target.transform.position - transform.position;
+        if (m_direction.magnitude < 1)
+            m_direction = Vector2.one;
         m_numberOfBounces++;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground")) && !m_isFinished && m_bossAI.CurrentAttackPattern == this)
+        if (!m_isFinished && m_bossAI.CurrentAttackPattern == this)
             DashTowards();
 
 
@@ -108,6 +115,17 @@ public class SpinDash : AttackPattern {
         m_bossAI.GetAnimator.SetBool("Taunt", true);
         m_taunt = true;
 
+    }
+
+    public override void StopAttack()
+    {
+        m_direction = Vector2.zero;
+        m_bossAI.GetRigidBody.velocity = Vector2.zero;
+        m_dash = false;
+        base.StopAttack();
+        m_isFinished = true;
+        m_bossAI.GetAnimator.SetBool("Attack", false);
+        m_numberOfBounces = 0;
     }
 
     public override void EndAttack()
