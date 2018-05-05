@@ -9,83 +9,69 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1110370866839540}
+  m_RootGameObject: {fileID: 1226744952362464}
   m_IsPrefabParent: 1
---- !u!1 &1110370866839540
+--- !u!1 &1226744952362464
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4747376262828648}
-  - component: {fileID: 61585565710708774}
-  - component: {fileID: 114826178096200334}
-  - component: {fileID: 212081895343662162}
-  m_Layer: 10
-  m_Name: Trampoline
-  m_TagString: Ground
+  - component: {fileID: 4303885372379590}
+  - component: {fileID: 212353375142728776}
+  - component: {fileID: 61966880757572210}
+  m_Layer: 11
+  m_Name: WallRunnable
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4747376262828648
+--- !u!4 &4303885372379590
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110370866839540}
+  m_GameObject: {fileID: 1226744952362464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2705612, y: 21.68, z: 0.1747638}
+  m_LocalPosition: {x: 15.76, y: 34.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61585565710708774
+--- !u!61 &61966880757572210
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110370866839540}
+  m_GameObject: {fileID: 1226744952362464}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: e5a916d064713944185a71b8d81a2726, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030028999, y: 0.7627382}
+  m_Offset: {x: -0.0063610077, y: 0.85149574}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.7263157, y: 1.431579}
-    newSize: {x: 1.7263157, y: 1.431579}
+    oldSize: {x: 1.7263157, y: 1.6842105}
+    newSize: {x: 3.6871047, y: 25.004328}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1.7567309, y: 1.22822}
+  m_Size: {x: 1.7506027, y: 1.6852226}
   m_EdgeRadius: 0
---- !u!114 &114826178096200334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110370866839540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61334ffc4295b174bb5142e53fbdccaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrampolineFrc: 180
-  Dir: {x: 0, y: 1}
---- !u!212 &212081895343662162
+--- !u!212 &212353375142728776
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110370866839540}
+  m_GameObject: {fileID: 1226744952362464}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -113,13 +99,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300060, guid: 98f80364606809946a08b8638aad3c9b, type: 3}
+  m_SortingOrder: -5
+  m_Sprite: {fileID: 21300078, guid: 98f80364606809946a08b8638aad3c9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7263157, y: 1.431579}
+  m_Size: {x: 3.6871047, y: 25.004328}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
