@@ -9,8 +9,10 @@ public class SwitchEnable : MonoBehaviour {
 
     private bool isActive = false;
     private float activeTimer = 0;
+    Animator anim;
 
     private void Start() {
+        anim = GetComponent<Animator>();
         foreach (GameObject g in ItemsToEnable) {
             g.SetActive(false);
         }
@@ -32,11 +34,13 @@ public class SwitchEnable : MonoBehaviour {
             }
             activeTimer = 0;
             isActive = false;
+            anim.SetTrigger("Switch");
         }
 	}
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
+            if (!isActive) anim.SetTrigger("Switch");
             isActive = true;
         }
     }
