@@ -12,6 +12,7 @@ public class StopChaseDecision : Decision {
 
     bool Return(StateController controller)
     {
+        if (controller.GetComponent<EnemyUnit>().Target == null) return false;;
         if (Vector2.Distance(controller.transform.position, controller.GetComponent<EnemyUnit>().Target.transform.position) > controller.GetComponent<EnemyUnit>().AiStat.ChaseStopDistance)
         {
             controller.GetComponent<EnemyUnit>().Target = null;

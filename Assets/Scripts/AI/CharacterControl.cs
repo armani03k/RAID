@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour {
 
-    Rigidbody2D m_rigidBody;
-    Animator m_animator;
-
+    protected Rigidbody2D m_rigidBody;
+    protected Animator m_animator;
     protected bool m_damaged;
     public bool m_attack;
-    void Start()
+    public virtual void Start()
     {
         m_rigidBody = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();

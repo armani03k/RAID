@@ -13,7 +13,7 @@ public class BossDamager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerStats>() == null)
+        if (collision.gameObject.GetComponent<PlayerStats>() == null || Boss.m_Invulnerable)
             return;
 
         collision.gameObject.GetComponent<PlayerStats>().TakeDmg(Boss.m_EnemyStat.Dmg);

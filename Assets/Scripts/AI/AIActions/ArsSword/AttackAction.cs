@@ -12,8 +12,8 @@ public class AttackAction : AiAction {
 
     void Attack(StateController controller)
     {
-        //if(controller.GetComponent<EnemyUnit>().AttackCoolDown())
-            controller.CharControl.Attack();
+        controller.CharControl.GetRigidbody.velocity = Vector2.zero;
+        controller.CharControl.Attack();
     }
 
 }

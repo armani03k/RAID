@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58660f54cbcec4245b78ccc13029cad7, type: 3}
   m_Name: FromPatrolToIdle
   m_EditorClassIdentifier: 
-  decision: {fileID: 0}
-  trueState: {fileID: 0}
-  falseState: {fileID: 0}
+  decision: {fileID: 11400000, guid: 37c3eba7a78956b4db5c1b9fa887b268, type: 2}
+  trueState: {fileID: 11400000, guid: d2ba96a8d38657c4290431a82985764d, type: 2}
+  falseState: {fileID: 11400000, guid: db01f3c7529beb54fb9e258229a2542f, type: 2}

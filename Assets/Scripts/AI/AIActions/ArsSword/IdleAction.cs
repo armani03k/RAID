@@ -7,6 +7,7 @@ public class IdleAction : AiAction {
 
     public override void Act(StateController controller)
     {
+        controller.CharControl.GetRigidbody.velocity = Vector2.zero;
         return;
     }
 }

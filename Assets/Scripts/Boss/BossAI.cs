@@ -15,17 +15,21 @@ public class BossAI : MonoBehaviour, IDamagable
 
     
     public EnemyStat m_EnemyStat;
+    public bool m_Invulnerable;
     public float m_AttackTransitionTime;
+    public float m_InvulnerabilityTime;
     public List<AttackPattern> m_attackPatterns;
     public AttackPattern m_currentAttack;
 
 
     Animator m_animator;
     Rigidbody2D m_rigidbody2D;
+    
     int m_attackIndex;
     float m_attackTransitionTimer;
     float m_health;
-
+    float m_invulnerabilityTimer;
+    float m_invulColor;
     //public Stats m_Stat;
 	// Use this for initialization
 	void Start () {
@@ -33,7 +37,18 @@ public class BossAI : MonoBehaviour, IDamagable
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_attackPatterns.AddRange(GetComponents<AttackPattern>());
         m_health = m_EnemyStat.HP;
+        m_invulColor = GetComponent<SpriteRenderer>().color.r;
+    }
 
+    public float Health
+    {
+        get { return m_health; }
+    }
+
+    public bool InvulnerabilityOff()
+    {
+        m_invulnerabilityTimer += Time.deltaTime;
+        return (m_invulnerabilityTimer > m_InvulnerabilityTime);
     }
 
     //Reference to Current Units Attack Pattern. Used to manipulate outside of script such as State transitions.
@@ -86,14 +101,32 @@ public class BossAI : MonoBehaviour, IDamagable
 
         if (m_health <= 0)
             Die();
+
+        if (!m_Invulnerable)
+            return;
+
+        InvulnerableFeedback();
+        if (InvulnerabilityOff())
+        {
+            m_Invulnerable = false;
+            m_invulnerabilityTimer = 0;
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
 	}
+
+    void InvulnerableFeedback()
+    {
+        GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.2f));
+    }
 
     public void TakeDamage(float damage)
     {
+        if (m_Invulnerable) return;
         if (m_health - damage > 0) m_health -= damage;
         if (m_health - damage < 0) m_health = 0;
         if (m_currentAttack != null && m_currentAttack.IsDisruptable())
             m_currentAttack.StopAttack();
+        m_Invulnerable = true;
         Debug.Log(m_health);
     }
 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6c1331e742f4a448c29f8c635dbcc0, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  AttackSpeed: 1
+  ChaseAreaRdius: 0
+  ChaseStopDistance: 0
+  PatrolPointSwitchDelay: 0

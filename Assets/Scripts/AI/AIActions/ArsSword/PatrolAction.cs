@@ -12,6 +12,7 @@ public class PatrolAction : AiAction {
 
     void Patrol(StateController controller)
     {
+        controller.GetComponent<EnemyUnit>().Target = controller.wayPointList[controller.nextWayPoint].gameObject;
         Vector2 direction = controller.wayPointList[controller.nextWayPoint].position - controller.transform.position;
         controller.CharControl.Move(direction);
         Vector2 waypoint = controller.wayPointList[controller.nextWayPoint].position;
@@ -20,6 +21,7 @@ public class PatrolAction : AiAction {
         mypos.y = 0;
         if (Vector2.Distance(mypos, waypoint) < 0.5f)
         {
+            controller.GetComponent<EnemyUnit>().IsPatrolPointReached = true;
             controller.nextWayPoint = Random.Range(0, controller.wayPointList.Count) % controller.wayPointList.Count;
         }
     }

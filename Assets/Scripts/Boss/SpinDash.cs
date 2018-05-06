@@ -68,19 +68,23 @@ public class SpinDash : AttackPattern {
         m_direction = target.transform.position - transform.position;
         if (m_direction.magnitude < 1)
             m_direction = Vector2.one;
-        m_numberOfBounces++;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!m_isFinished && m_bossAI.CurrentAttackPattern == this)
+        {
             DashTowards();
+            m_numberOfBounces++;
+        }
+            
 
 
         if (ThrustSpike == null)
             return;
 
-        if (m_numberOfBounces > NumberOfBounces && m_bossAI.m_EnemyStat.HP < m_bossAI.m_EnemyStat.MaxHP / 2 && m_dash)
+        if (m_numberOfBounces > NumberOfBounces && m_bossAI.Health < m_bossAI.m_EnemyStat.MaxHP / 2 && m_dash)
         {
             m_dash = false;
             m_bossAI.GetRigidBody.velocity = Vector2.zero;
@@ -119,13 +123,13 @@ public class SpinDash : AttackPattern {
 
     public override void StopAttack()
     {
+        base.StopAttack();
         m_direction = Vector2.zero;
         m_bossAI.GetRigidBody.velocity = Vector2.zero;
         m_dash = false;
-        base.StopAttack();
         m_isFinished = true;
-        m_bossAI.GetAnimator.SetBool("Attack", false);
         m_numberOfBounces = 0;
+        m_bossAI.GetAnimator.SetBool("Attack", false);
     }
 
     public override void EndAttack()
@@ -137,6 +141,7 @@ public class SpinDash : AttackPattern {
         m_numberOfBounces = 0;
         m_tauntTimer = 0;
         m_direction = Vector2.zero;
+        m_bossAI.GetRigidBody.velocity = Vector2.zero;
 
     }
 }

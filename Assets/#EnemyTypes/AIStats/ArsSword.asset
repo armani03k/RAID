@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: ArsSword
   m_EditorClassIdentifier: 
   AttackSpeed: 2
-  ChaseAreaRdius: 3
-  ChaseStopDistance: 6
+  ChaseAreaRdius: 2
+  ChaseStopDistance: 4
   PatrolPointSwitchDelay: 2

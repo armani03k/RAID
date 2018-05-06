@@ -95,7 +95,7 @@ AnimationClip:
     floatParameter: 10
     intParameter: 0
     messageOptions: 0
-  - time: 0.044444446
+  - time: 0
     functionName: ToggleAttackTriggers
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -108,11 +108,4 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
-    messageOptions: 0
-  - time: 0.08888889
-    functionName: DisableTrigger
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 2
     messageOptions: 0

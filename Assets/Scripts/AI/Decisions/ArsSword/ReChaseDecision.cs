@@ -12,6 +12,6 @@ public class ReChaseDecision : Decision {
 
     bool Chase(StateController controller)
     {
-        return (!controller.CharControl.m_attack && controller.GetComponent<EnemyUnit>().Target != null);
+        return (controller.GetComponent<EnemyUnit>().Target != null && controller.GetComponent<EnemyUnit>().Target.GetComponent<PlayerStats>() != null && !controller.GetComponent<EnemyUnit>().AtkArea.IsEnemyInRange);
     }
 }

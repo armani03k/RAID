@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDamageTrigger : MonoBehaviour {
 
 
-    bool m_damaging;
+    [SerializeField]bool m_damaging;
     float m_damage;
     private void OnTriggerStay2D(Collider2D collision)
     {

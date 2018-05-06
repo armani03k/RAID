@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a00d6dde9c11245822561d2fad13e9, type: 3}
+  m_Name: Struggle
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 6577dab9850875547a5b8eed2560ef9a, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: 0fd058f0f9a3da042a76b9cfd7d954fe, type: 2}

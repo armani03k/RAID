@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DaedalusBlast : AttackPattern {
 
+    public GameObject Wings;
     public GameObject Projectile;
     public Transform SpawnPoint;
     public float FlyUpTime;
@@ -42,22 +43,27 @@ public class DaedalusBlast : AttackPattern {
 
     public override IEnumerator Attack()
     {
-        while(m_flyTimer < FlyUpTime)
+        m_bossAI.GetAnimator.SetBool("Move", true);
+        while (m_flyTimer < FlyUpTime)
         {
             if (transform.position.y >= YLimit)
                 break;
+            
             MoveUp();
             m_flyTimer += Time.deltaTime;
             yield return null;
         }
-        m_bossAI.GetRigidBody.velocity = Vector2.zero;
         m_inPosition = true;
+        m_bossAI.GetAnimator.SetBool("Move", false);
+        Wings.SetActive(true);
+        m_bossAI.GetRigidBody.velocity = Vector2.zero;
         m_moving = true;
         yield return null;
     }
 
     public override void EndAttack()
     {
+        Wings.SetActive(false);
         m_bossAI.GetAnimator.SetBool("Attack", false);
         base.EndAttack();
         m_flyTimer = 0;
