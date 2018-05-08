@@ -13,11 +13,12 @@ public struct Stats
 public class BossAI : MonoBehaviour, IDamagable
 {
 
-    
+    public BossDamager m_BossDamager;
     public EnemyStat m_EnemyStat;
     public bool m_Invulnerable;
     public float m_AttackTransitionTime;
     public float m_InvulnerabilityTime;
+    public float m_FlipValue;
     public List<AttackPattern> m_attackPatterns;
     public AttackPattern m_currentAttack;
 
@@ -30,14 +31,17 @@ public class BossAI : MonoBehaviour, IDamagable
     float m_health;
     float m_invulnerabilityTimer;
     float m_invulColor;
+
+    public float m_flipValue;
     //public Stats m_Stat;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         m_animator = GetComponent<Animator>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_attackPatterns.AddRange(GetComponents<AttackPattern>());
         m_health = m_EnemyStat.HP;
         m_invulColor = GetComponent<SpriteRenderer>().color.r;
+        m_animator.SetBool("Taunt", true);
     }
 
     public float Health
@@ -90,12 +94,12 @@ public class BossAI : MonoBehaviour, IDamagable
 
         if (m_attackTransitionTimer > m_AttackTransitionTime && m_attackPatterns.Count != 0 && m_currentAttack == null)
         {
+            m_animator.SetBool("Taunt", false);
             m_currentAttack = m_attackPatterns[m_attackIndex];
             StartCoroutine(m_currentAttack.Attack());
 
             //Increment Attack index without going over the number of attack patterns detected.
             m_attackIndex = (m_attackIndex + 1) % m_attackPatterns.Count;
-
             m_attackTransitionTimer = 0;
         }
 
@@ -114,6 +118,11 @@ public class BossAI : MonoBehaviour, IDamagable
         }
 	}
 
+    public void ResetDamager()
+    {
+        m_BossDamager.SetDamage(m_EnemyStat.Dmg);
+    }
+
     void InvulnerableFeedback()
     {
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.2f));
@@ -122,12 +131,20 @@ public class BossAI : MonoBehaviour, IDamagable
     public void TakeDamage(float damage)
     {
         if (m_Invulnerable) return;
-        if (m_health - damage > 0) m_health -= damage;
+        if (m_health - damage >= 0) m_health -= damage;
         if (m_health - damage < 0) m_health = 0;
-        if (m_currentAttack != null && m_currentAttack.IsDisruptable())
-            m_currentAttack.StopAttack();
         m_Invulnerable = true;
+        if (m_currentAttack != null && damage > 10 && m_currentAttack.IsDisruptable())
+            m_currentAttack.StopAttack();
+        
         Debug.Log(m_health);
+    }
+
+    public virtual void Flip()
+    {
+        var temp = transform.localScale;
+        temp.x = m_flipValue;
+        transform.localScale = temp;
     }
 
     //To be called upon unit death.

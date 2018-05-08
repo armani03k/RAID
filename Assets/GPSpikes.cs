@@ -12,7 +12,7 @@ public class GPSpikes : MonoBehaviour {
 
         if(collision.gameObject.GetComponent<PlayerStats>() != null)
         {
-            collision.gameObject.GetComponent<PlayerStats>().TakeDmg(GetComponentInParent<BossAI>().m_EnemyStat.Dmg/2);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDmg(GetComponentInParent<BossAI>().m_EnemyStat.Dmg * 2);
             m_isDamaging = false;
         }
     }

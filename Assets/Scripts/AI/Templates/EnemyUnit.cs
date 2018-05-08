@@ -118,9 +118,9 @@ public class EnemyUnit : MonoBehaviour, IDamagable
             return;
 
         if (Target.transform.position.x < transform.position.x)
-            m_flipValue = 1;
+            m_flipValue = 0.5f;
         else
-            m_flipValue = -1;
+            m_flipValue = -0.5f;
 
         Flip();
     }

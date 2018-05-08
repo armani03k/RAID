@@ -14,5 +14,5 @@ MonoBehaviour:
   Name: Daerus
   HP: 100
   MaxHP: 100
-  Dmg: 20
+  Dmg: 5
   BaseSkin: {r: 0.21323532, g: 1, b: 0.70699793, a: 0}

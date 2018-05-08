@@ -12,6 +12,8 @@ public class PatrolAction : AiAction {
 
     void Patrol(StateController controller)
     {
+        if (controller.wayPointList.Count == 0)
+            return;
         controller.GetComponent<EnemyUnit>().Target = controller.wayPointList[controller.nextWayPoint].gameObject;
         Vector2 direction = controller.wayPointList[controller.nextWayPoint].position - controller.transform.position;
         controller.CharControl.Move(direction);

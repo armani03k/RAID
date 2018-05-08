@@ -14,12 +14,14 @@ public class ThrustSpike : SubPattern {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (m_launched)
+            return;
 	}
 
     public override IEnumerator Activate(AttackPattern caller)
     {
-        
+
         m_bossAI.GetAnimator.SetBool("Attack", true);
         m_bossAI.GetAnimator.SetFloat("AttackIndex", 2);
         m_attackPatternParent = caller;
@@ -42,7 +44,7 @@ public class ThrustSpike : SubPattern {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (m_launched)
+        if (m_launched && m_bossAI.GetRigidBody.velocity.magnitude > 0)
         {
             m_bossAI.GetAnimator.SetBool("Attack", false);
             m_isFinished = true;

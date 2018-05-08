@@ -107,11 +107,18 @@ AnimationClip:
     functionName: SetDamage
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 10
+    floatParameter: 11
     intParameter: 0
     messageOptions: 0
   - time: 0.08888889
     functionName: ToggleAttackTriggers
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
+    messageOptions: 0
+  - time: 0.2
+    functionName: DisableTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -123,11 +130,4 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
-    messageOptions: 0
-  - time: 0.2
-    functionName: DisableTrigger
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 1
     messageOptions: 0

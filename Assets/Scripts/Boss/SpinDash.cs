@@ -26,7 +26,7 @@ public class SpinDash : AttackPattern {
 	
 	// Update is called once per frame
 	void Update () {
-        if (m_numberOfBounces > NumberOfBounces && m_bossAI.m_EnemyStat.HP > m_bossAI.m_EnemyStat.MaxHP/2 && !m_taunt)
+        if (m_numberOfBounces > NumberOfBounces && m_bossAI.Health > m_bossAI.m_EnemyStat.MaxHP/2 && !m_taunt)
         {
             Taunt();
         }
@@ -50,7 +50,7 @@ public class SpinDash : AttackPattern {
 
     public override IEnumerator Attack()
     {
-        
+        m_bossAI.m_BossDamager.SetDamage(10);
         new WaitForSeconds(ChargeUpDelay);
         m_bossAI.GetAnimator.SetBool("Attack", true);
         m_bossAI.GetAnimator.SetFloat("AttackIndex", 0);
@@ -68,7 +68,12 @@ public class SpinDash : AttackPattern {
         m_direction = target.transform.position - transform.position;
         if (m_direction.magnitude < 1)
             m_direction = Vector2.one;
-        
+        if (target.transform.position.x < transform.position.x)
+            m_bossAI.m_flipValue = -1;
+        else
+            m_bossAI.m_flipValue = 1;
+
+        m_bossAI.Flip();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -113,6 +118,12 @@ public class SpinDash : AttackPattern {
 
     public void Taunt()
     {
+        if (target.transform.position.x < transform.position.x)
+            m_bossAI.m_flipValue = -1;
+        else
+            m_bossAI.m_flipValue = 1;
+
+        m_bossAI.Flip();
         m_bossAI.GetAnimator.SetBool("Attack", false);
         m_bossAI.GetRigidBody.velocity = Vector2.zero;
         m_dash = false;
@@ -130,6 +141,7 @@ public class SpinDash : AttackPattern {
         m_isFinished = true;
         m_numberOfBounces = 0;
         m_bossAI.GetAnimator.SetBool("Attack", false);
+        m_bossAI.ResetDamager();
     }
 
     public override void EndAttack()
@@ -142,6 +154,7 @@ public class SpinDash : AttackPattern {
         m_tauntTimer = 0;
         m_direction = Vector2.zero;
         m_bossAI.GetRigidBody.velocity = Vector2.zero;
+        m_bossAI.ResetDamager();
 
     }
 }
