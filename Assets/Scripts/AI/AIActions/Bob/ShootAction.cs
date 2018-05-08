@@ -12,6 +12,7 @@ public class ShootAction : AiAction {
 
     void Shoot(StateController controller)
     {
+        
         if (controller.GetComponent<EnemyUnit>().AttackCoolDown())
             controller.GetComponent<BobController>().Attack();
     }

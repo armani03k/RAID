@@ -12,6 +12,11 @@ public class ShootDecision : Decision {
 
     bool Shoot(StateController controller)
     {
-        return (controller.GetComponent<BobController>().TargetInSight());
+        if (controller.GetComponent<BobController>().TargetInSight())
+        {
+            controller.GetComponent<BobController>().Show();
+            return true;
+        }
+        return false;
     }
 }

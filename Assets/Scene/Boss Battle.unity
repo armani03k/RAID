@@ -1575,11 +1575,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseHP: 100
+  Dead: 0
   BaseStamina: 100
   BarFillSpd: 100
   HPImg: {fileID: 0}
   StmImg: {fileID: 0}
   StaminaReg: 0
+  InvulnerabilityTime: 0
 --- !u!1 &1479125345
 GameObject:
   m_ObjectHideFlags: 0

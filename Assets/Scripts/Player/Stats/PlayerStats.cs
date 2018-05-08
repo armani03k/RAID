@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour {
     //HP
     public float BaseHP;
     private float trueHP;
+    public bool Dead;
     public float AveHP {
         get {
             return trueHP / BaseHP;
@@ -44,7 +45,10 @@ public class PlayerStats : MonoBehaviour {
     [Header("Other")]
     public float StaminaReg;
     //public float StmRegDelay;
+    public float InvulnerabilityTime;
 
+    bool m_invulnerable;
+    float m_invulnerabilityTimer;
     void Start () {
         trueHP = BaseHP;
         trueStamina = BaseStamina;
@@ -55,11 +59,37 @@ public class PlayerStats : MonoBehaviour {
         UIUpdate();
 	}
 
+    bool InvulnerabilityOff()
+    {
+        if(m_invulnerabilityTimer > InvulnerabilityTime)
+        {
+            m_invulnerabilityTimer = 0;
+            return true;
+        }
+        m_invulnerabilityTimer += Time.deltaTime;
+        return false;
+    }
+
     private void Update() {
         if (trueStamina < BaseStamina) {
             trueStamina += StaminaReg * Time.deltaTime;
             UIUpdate();
         }
+
+        if (!m_invulnerable)
+            return;
+
+        if(InvulnerabilityOff())
+        {
+            m_invulnerable = false;
+        }
+
+        if (trueHP <= 0)
+        {
+            Dead = true;
+            GetComponent<Animator>().SetBool("Dead", true);
+        }
+            
     }
 
     public void UIUpdate() {
@@ -78,9 +108,12 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public void TakeDmg(float amt) {
-        
+
+        if (m_invulnerable) return;
         if (trueHP > 0) trueHP -= amt;
         if (trueHP <= 0) trueHP = 0;
+        GetComponent<Animator>().SetTrigger("Damaged");
+        m_invulnerable = true;
     }
 
     IEnumerator UIAnimScale(float t) {

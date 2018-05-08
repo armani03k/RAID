@@ -25,6 +25,7 @@ public class EnemyUnit : MonoBehaviour, IDamagable
     public AttackArea AtkArea;
     public GameObject Target;
     //public UnitStates ActiveState;
+    public bool Invulnerable;
     public float MoveSpd;
     public Direction m_direction;
 
@@ -99,6 +100,7 @@ public class EnemyUnit : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage)
     {
+        if (Invulnerable) return;
         if (m_health - damage > 0) m_health -= damage;
         if (m_health - damage < 0) m_health = 0;
     }

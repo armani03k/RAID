@@ -95,10 +95,12 @@ public class BeeboiController : CharacterControl {
     {
         IsDropping = true;
         m_rigidBody.AddForce(Vector2.down * DropForce);
+        GetComponentInChildren<TriggerDamager>().IsDamaging = true;
     }
 
     public void Stuck()
     {
+        GetComponentInChildren<TriggerDamager>().IsDamaging = false;
         m_rigidBody.velocity = Vector2.zero;
         IsDropping = false;
         IsStuck = true;

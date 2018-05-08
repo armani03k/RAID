@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: 2ac5dd9774b3ad24cbbd3fa56cff0ead
-timeCreated: 1525683750
+timeCreated: 1525789684
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ToraDeath Animation_0
+    21300002: ToraDeath Animation_1
+    21300004: ToraDeath Animation_2
+    21300006: ToraDeath Animation_3
+    21300008: ToraDeath Animation_4
+    21300010: ToraDeath Animation_5
+    21300012: ToraDeath Animation_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +47,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -66,9 +73,127 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ToraDeath Animation_0
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 152
+        width: 722
+        height: 804
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_1
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 137
+        width: 722
+        height: 804
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_2
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 104
+        width: 721
+        height: 804
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_3
+      rect:
+        serializedVersion: 2
+        x: 3302
+        y: 149
+        width: 521
+        height: 816
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_4
+      rect:
+        serializedVersion: 2
+        x: 4439
+        y: 131
+        width: 173
+        height: 816
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_5
+      rect:
+        serializedVersion: 2
+        x: 5318
+        y: 128
+        width: 173
+        height: 813
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ToraDeath Animation_6
+      rect:
+        serializedVersion: 2
+        x: 5867
+        y: 125
+        width: 29
+        height: 786
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

@@ -44,16 +44,19 @@ public class BobController : CharacterControl {
 
     public void Fire()
     {
+        GetComponent<EnemyUnit>().Invulnerable = false;
         m_fire = true;
     }
 
     public void Show()
     {
+        GetComponent<EnemyUnit>().Invulnerable = false;
         m_hide = false;
     }
 
     public void Emerged()
     {
+        GetComponent<EnemyUnit>().Invulnerable = false;
         m_hidden = false;
         Fire();
     }
@@ -66,13 +69,13 @@ public class BobController : CharacterControl {
 
     public void Hidden()
     {
+        GetComponent<EnemyUnit>().Invulnerable = true;
         m_hidden = true;
     }
 
     public bool TargetInSight()
     {
         RaycastHit2D hit = Physics2D.Raycast(ProjectileSpawnPoint.transform.position, new Vector2((int)m_ShootDirection, 0), m_AttackRange, m_LayerMask);
-        Debug.Log("WTF");
         if (hit.transform == null)
             return false;
         Debug.Log(hit.transform.gameObject);

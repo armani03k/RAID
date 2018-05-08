@@ -136,7 +136,7 @@ public class BossAI : MonoBehaviour, IDamagable
         m_Invulnerable = true;
         if (m_currentAttack != null && damage > 10 && m_currentAttack.IsDisruptable())
             m_currentAttack.StopAttack();
-        
+        m_animator.SetTrigger("Damaged");
         Debug.Log(m_health);
     }
 
@@ -145,6 +145,7 @@ public class BossAI : MonoBehaviour, IDamagable
         var temp = transform.localScale;
         temp.x = m_flipValue;
         transform.localScale = temp;
+
     }
 
     //To be called upon unit death.

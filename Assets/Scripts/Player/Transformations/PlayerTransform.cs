@@ -77,6 +77,7 @@ public class PlayerTransform : MonoBehaviour {
 
     void Update() {
 
+        if (GetComponent<PlayerStats>().Dead) return;
         if (Input.GetButtonDown("LB") && Forms.Count >= 1) ChangePrevious();
         if (Input.GetButtonDown("RB") && Forms.Count >= 1) ChangeNext();
 
@@ -189,13 +190,13 @@ public class PlayerTransform : MonoBehaviour {
         #endregion
 
         #region Tiger
-        if (other.gameObject.CompareTag("Wall") && WallRun) pMovement.JumpForce = 6.0f;
+        //if (other.gameObject.CompareTag("Wall") && WallRun) pMovement.JumpForce = 6.0f;
 
         if (other.gameObject.CompareTag("Wall") && Input.GetButton("Jump") && WallRun && pMovement.GetDash) {
             //descent prompt
             if (descendTick < descendTimer) descendTick += Time.deltaTime;
             else if (!descending && descendTick >= descendTimer) {
-                this.GetComponent<Rigidbody2D>().drag = 10;
+                this.GetComponent<Rigidbody2D>().drag = 20;
                 descending = true;
             }
             //trigger wall run
@@ -301,5 +302,10 @@ public class PlayerTransform : MonoBehaviour {
         skill = false;
         anim.SetBool("Attacking", attack);
         anim.SetBool("Skill", skill);
+    }
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
     }
 }
