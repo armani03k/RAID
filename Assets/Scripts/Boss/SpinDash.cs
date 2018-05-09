@@ -33,7 +33,7 @@ public class SpinDash : AttackPattern {
 
         if (m_dash)
         {
-            m_bossAI.GetRigidBody.velocity = (m_direction.normalized * Speed * Time.deltaTime);
+            m_bossAI.GetRigidBody.velocity = (m_direction.normalized * Speed * Time.fixedDeltaTime);
         }
 
         if (ThrustSpike != null && ThrustSpike.IsFinished && !m_taunt)
@@ -123,6 +123,7 @@ public class SpinDash : AttackPattern {
         else
             m_bossAI.m_flipValue = 1;
 
+        LevelEventHandler.TriggerEvent("Taunt");
         m_bossAI.Flip();
         m_bossAI.GetAnimator.SetBool("Attack", false);
         m_bossAI.GetRigidBody.velocity = Vector2.zero;

@@ -87,6 +87,7 @@ public class PlayerStats : MonoBehaviour {
         if (trueHP <= 0)
         {
             Dead = true;
+            LevelEventHandler.TriggerEvent("GameOver");
             GetComponent<Animator>().SetBool("Dead", true);
         }
             

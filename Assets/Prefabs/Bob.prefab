@@ -118,7 +118,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.65}
+  m_Size: {x: 0.7, y: 0.65}
   m_EdgeRadius: 0
 --- !u!95 &95364634294827830
 Animator:
@@ -152,6 +152,7 @@ MonoBehaviour:
   AiStat: {fileID: 11400000, guid: 7458919c989eb3345af9d631650929f6, type: 2}
   AtkArea: {fileID: 0}
   Target: {fileID: 0}
+  Invulnerable: 0
   MoveSpd: 0
   m_direction: -1
   m_attackCooldown: 1

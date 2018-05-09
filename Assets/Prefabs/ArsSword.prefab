@@ -102,8 +102,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817245581136042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: -0.02, z: 0}
-  m_LocalScale: {x: 0.50000006, y: 1.6374998, z: 1}
+  m_LocalPosition: {x: -1.01, y: -0.16, z: 0}
+  m_LocalScale: {x: 0.50000006, y: 0.96203053, z: 1}
   m_Children: []
   m_Father: {fileID: 4283886612733354}
   m_RootOrder: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -201,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.18, y: 0.95}
+  m_Size: {x: 1.45, y: 0.95}
   m_EdgeRadius: 0
 --- !u!95 &95236984047993900
 Animator:
@@ -278,7 +278,8 @@ MonoBehaviour:
   AiStat: {fileID: 11400000, guid: 142ee3fbfaa58824f874760836bae086, type: 2}
   AtkArea: {fileID: 114943406380460942}
   Target: {fileID: 0}
-  MoveSpd: 350
+  Invulnerable: 0
+  MoveSpd: 420
   m_direction: -1
   m_attackCooldown: 0
   IdleDelay: 0

@@ -12,7 +12,12 @@ public struct Stats
 
 public class BossAI : MonoBehaviour, IDamagable
 {
+    public List<AudioClip> WinLines;
+    public List<AudioClip> TauntLines;
 
+    public AudioSource TauntSource;
+    public AudioSource WinSource;
+    public PlayerStats Player;
     public BossDamager m_BossDamager;
     public EnemyStat m_EnemyStat;
     public bool m_Invulnerable;
@@ -31,11 +36,14 @@ public class BossAI : MonoBehaviour, IDamagable
     float m_health;
     float m_invulnerabilityTimer;
     float m_invulColor;
+    bool m_taunt;
 
     public float m_flipValue;
     //public Stats m_Stat;
     // Use this for initialization
     void Start () {
+        LevelEventHandler.StartListening("GameOver", PlayWin);
+        LevelEventHandler.StartListening("Taunt", PlayTaunt);
         m_animator = GetComponent<Animator>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_attackPatterns.AddRange(GetComponents<AttackPattern>());
@@ -83,11 +91,22 @@ public class BossAI : MonoBehaviour, IDamagable
     // Update is called once per frame
     void Update () {
 
-        if(m_currentAttack != null && m_currentAttack.IsFinished)
+        if (m_currentAttack != null && m_currentAttack.IsFinished)
         {
             m_currentAttack.EndAttack();
             m_currentAttack = null;
         }
+        if (!m_taunt && Player.Dead)
+        {
+            if (m_currentAttack != null)
+                CurrentAttackPattern.EndAttack();
+            m_currentAttack = null;
+            m_taunt = true;
+            m_animator.SetBool("Taunt", true);
+        }
+
+        if (Player.Dead)
+            return;
 
         if (m_currentAttack == null && m_EnemyStat.HP > 0)
             m_attackTransitionTimer += Time.deltaTime;
@@ -134,10 +153,10 @@ public class BossAI : MonoBehaviour, IDamagable
         if (m_health - damage >= 0) m_health -= damage;
         if (m_health - damage < 0) m_health = 0;
         m_Invulnerable = true;
+        m_animator.SetTrigger("Damaged");
         if (m_currentAttack != null && damage > 10 && m_currentAttack.IsDisruptable())
             m_currentAttack.StopAttack();
-        m_animator.SetTrigger("Damaged");
-        Debug.Log(m_health);
+        
     }
 
     public virtual void Flip()
@@ -148,6 +167,21 @@ public class BossAI : MonoBehaviour, IDamagable
 
     }
 
+
+    void PlayTaunt()
+    {
+        int index = Random.Range(0, TauntLines.Count);
+        TauntSource.clip = TauntLines[index];
+        TauntSource.Play();
+    }
+
+    void PlayWin()
+    {
+        int index = Random.Range(0, WinLines.Count);
+        WinSource.clip = WinLines[index];
+        WinSource.Play();
+    }
+
     //To be called upon unit death.
     public void Die()
     {
@@ -156,6 +190,7 @@ public class BossAI : MonoBehaviour, IDamagable
         m_currentAttack = null;
         m_attackPatterns.Clear();
         Destroy(gameObject);
+        LevelEventHandler.TriggerEvent("Victory");
     }
 
 }

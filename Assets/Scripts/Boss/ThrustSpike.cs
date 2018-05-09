@@ -39,7 +39,7 @@ public class ThrustSpike : SubPattern {
         else
             direction = new Vector2(DashForce , 0);
 
-        m_bossAI.GetRigidBody.AddForce(direction);
+        m_bossAI.GetRigidBody.AddForce(direction, ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
