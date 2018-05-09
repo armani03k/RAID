@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Daerus
   m_EditorClassIdentifier: 
   Name: Daerus
-  HP: 100
-  MaxHP: 100
+  HP: 150
+  MaxHP: 150
   Dmg: 5
   BaseSkin: {r: 0.21323532, g: 1, b: 0.70699793, a: 0}

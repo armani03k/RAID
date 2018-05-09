@@ -73,8 +73,9 @@ public class PlayerStats : MonoBehaviour {
     private void Update() {
         if (trueStamina < BaseStamina) {
             trueStamina += StaminaReg * Time.deltaTime;
-            UIUpdate();
+            
         }
+        UIUpdate();
 
         if (!m_invulnerable)
             return;

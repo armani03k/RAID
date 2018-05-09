@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct Stats
@@ -38,6 +39,17 @@ public class BossAI : MonoBehaviour, IDamagable
     float m_invulColor;
     bool m_taunt;
 
+    [Space(25)]
+    public float BarFillSpd;
+
+    //barfill
+    private Color fullCol;
+    private Color lowCol;
+    private float baseT = 0;
+
+    [Header("UI")]
+    public Image HPImg;
+
     public float m_flipValue;
     //public Stats m_Stat;
     // Use this for initialization
@@ -50,6 +62,16 @@ public class BossAI : MonoBehaviour, IDamagable
         m_health = m_EnemyStat.HP;
         m_invulColor = GetComponent<SpriteRenderer>().color.r;
         m_animator.SetBool("Taunt", true);
+        fullCol = Color.green;
+        lowCol = Color.red;
+    }
+
+    public float AveHP
+    {
+        get
+        {
+            return m_health / m_EnemyStat.MaxHP;
+        }
     }
 
     public float Health
@@ -90,7 +112,7 @@ public class BossAI : MonoBehaviour, IDamagable
 
     // Update is called once per frame
     void Update () {
-
+        UIUpdate();
         if (m_currentAttack != null && m_currentAttack.IsFinished)
         {
             m_currentAttack.EndAttack();
@@ -191,6 +213,31 @@ public class BossAI : MonoBehaviour, IDamagable
         m_attackPatterns.Clear();
         Destroy(gameObject);
         LevelEventHandler.TriggerEvent("Victory");
+    }
+    public void UIUpdate()
+    {
+        StartCoroutine(UIAnimScale(5));
+
+        //change color
+        if (HPImg == null)
+            return;
+
+        HPImg.color = Color.Lerp(lowCol, fullCol, AveHP);
+    }
+
+    IEnumerator UIAnimScale(float t)
+    {
+        if (HPImg == null)
+            yield return null;
+
+        while (baseT < t)
+        {
+            baseT += Time.deltaTime;
+            HPImg.fillAmount = Mathf.Lerp(HPImg.fillAmount, AveHP, BarFillSpd * Time.deltaTime);
+            yield return null;
+        }
+
+        baseT = 0;
     }
 
 }
